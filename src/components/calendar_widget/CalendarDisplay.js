@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { MuiPickersUtilsProvider, KeyboardDatePicker, DatePicker } from "@material-ui/pickers";
 import MomentUtils from '@date-io/moment';
-import Button from "@material-ui/core/Button";
 // context
 import { CalendarContext } from '../../context/CalendarContext'
 

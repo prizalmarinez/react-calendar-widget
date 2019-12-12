@@ -5,16 +5,19 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
 // components
 import CalendarHeader from './CalendarHeader'
 import CalendarDisplay from './CalendarDisplay'
+import CalendarForm from './CalendarForm'
 
 const useStyles = makeStyles(theme => ({
+    grid: {
+        flexGrow: 1
+    },
     root: {
-        padding: 0
+        // padding: 0
     },
     header: {
         textAlign: 'center',
@@ -56,22 +59,18 @@ export default function CalendarDialog() {
                 <div className={classes.header}>
                     <CalendarHeader />
                 </div>
-                <DialogContent className={classes.content}>
-                    <div>
-                        <Grid container>
-                            <Grid item md={6} xs={12} >
-                                <div className={classes.grid}>
-                                    <CalendarDisplay />
-                                </div>
-                            </Grid>
-                            <Grid item md={6} xs={12} >
-                                <div className={classes.grid}>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
-                                </div>
-                            </Grid>
+                {/* <DialogContent className={classes.content}> */}
+                <div>
+                    <Grid container className={classes.grid}>
+                        <Grid item md={6} xs={12} >
+                            <CalendarDisplay />
                         </Grid>
-                    </div>
-                </DialogContent>
+                        <Grid item md={6} xs={12} >
+                            <CalendarForm />
+                        </Grid>
+                    </Grid>
+                </div>
+                {/* </DialogContent> */}
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
                         Disagree
