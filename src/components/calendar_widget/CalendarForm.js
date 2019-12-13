@@ -35,8 +35,8 @@ export default function CalendarForm() {
     return (
         <div>
             <form className={classes.root} noValidate autoComplete="off">
-                <TextField label="Name" fullWidth value={values.name} />
-                <TextField label="Email" fullWidth value={values.email} />
+                <TextField label="Name" fullWidth type="text" value={values.name} onChange={handleChange("name")} />
+                <TextField label="Email" fullWidth type="email" value={values.email} onChange={handleChange("email")} />
                 <TextField
                     id="standard-textarea"
                     label="Comment"
