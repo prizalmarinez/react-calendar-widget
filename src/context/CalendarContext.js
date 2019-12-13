@@ -22,6 +22,7 @@ export const CalendarProvider = (props) => {
 
     const backToCalendar = () => {
         setPickDate(false)
+        setViewForm(false)
     }
 
     const backToTime = () => {
