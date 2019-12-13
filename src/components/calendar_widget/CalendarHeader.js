@@ -10,17 +10,14 @@ import { CalendarContext } from '../../context/CalendarContext'
 
 const useStyles = makeStyles(theme => ({
     root: {
-        flexGrow: 1,
-        color: '#ffffff'
-    },
-    day: {
-        backgroundColor: '#009688'
+        flexGrow: 1
     },
     month: {
-        backgroundColor: '#26a69a'
+        backgroundColor: '#26a69a',
+        marginTop: 10
     },
-    pad: {
-        padding: theme.spacing(1),
+    calendarControls: {
+        marginTop: 10
     }
 }));
 
@@ -30,25 +27,19 @@ export default function CalendarHeader() {
 
     return (
         <div className={classes.root}>
-            <Grid item xs={12} className={classes.day}>
+            <Grid container className={classes.root}>
                 <div className={classes.pad}>
-                    <Typography variant="subtitle1">
+                    <Typography variant="h4">
                         {moment(date).format('dddd')}
                     </Typography>
-                </div>
-            </Grid>
-            <Grid item xs={12} className={classes.month}>
-                <div className={classes.pad}>
                     <Typography variant="h5">
                         {moment(date).format('MMMM')}, {moment(date).format('YYYY')}
                     </Typography>
-                </div>
-                <Typography variant="h3" >
-                    {moment(date).format('Do')}
-                </Typography>
-                <div className={classes.pad}>
-                    <Typography variant="h5" >
-                        16:00 - 16:30
+                    <Typography variant="h3" >
+                        {moment(date).format('Do')}
+                    </Typography>
+                    <Typography variant="h4" >
+                        {moment(date).format('hh:mm')}
                     </Typography>
                 </div>
             </Grid>

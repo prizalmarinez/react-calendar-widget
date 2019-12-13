@@ -3,10 +3,16 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import FormHelperText from '@material-ui/core/FormHelperText'
+import Button from '@material-ui/core/Button'
+// icons
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: 15
+        paddingLeft: 15,
+        paddingRight: 15,
+        paddingTop: 25,
+        minHeight: 250
     },
     helperText: {
         float: 'right'
@@ -43,9 +49,17 @@ export default function CalendarForm() {
                     onChange={handleChange("comment")}
                 />
                 <FormHelperText className={classes.helperText}>
-                    {/* helperText={`${values.comment.length}/${char_limit}`} */}
                     {values.comment.length + '/' + char_limit}
                 </FormHelperText>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    endIcon={<CheckCircleOutlineIcon />}
+                    fullWidth
+                    style={{ margin: 10 }}
+                >
+                    Submit
+                    </Button>
             </form>
         </div>
     )
