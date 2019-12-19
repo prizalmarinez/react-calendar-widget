@@ -1,3 +1,6 @@
+## Online Demo
+Deployed in netlify [calendar_widget](https://silly-heisenberg-8227d5.netlify.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
